@@ -1,9 +1,12 @@
 <resources>
     <string name="app_name">Muv.U</string>
-    <string name="movie_poster">Poster Movie</string>
-    <string name="movie_tittle">Judul Movie</string>
-    <string name="movie_desc">Deskripsi</string>
+    <string name="movie_poster">Movie Poster</string>
+    <string name="movie_tittle">Title</string>
+    <string name="movie_desc">Description</string>
     <string name="synopsis">Synopsis</string>
+    <string name="dummy_txt">Test</string>
+    <string name="main_tab_tittle_movies">Movies</string>
+    <string name="main_tab_tittle_tvshows">Tv Shows</string>
 
     <array name="movie_poster">
         <item>@drawable/poster_a_star</item>

@@ -1,10 +1,9 @@
 package id.kalibree.muvu
 
-import android.content.Intent
 import android.content.res.TypedArray
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import id.kalibree.muvu.adapter.TabLayoutAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -19,7 +18,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val tabLayoutAdapter = TabLayoutAdapter(
+            this,
+            supportFragmentManager
+        )
+        main_view_pager.adapter = tabLayoutAdapter
+        main_tab_lyt.setupWithViewPager(main_view_pager)
+
+        supportActionBar?.elevation = 0F
+
         //val listView: ListView = findViewById(R.id.lv_movie)
+        /*
         val listView: ListView = lv_movie
         adapter = MovieAdapter(this)
         listView.adapter = adapter
@@ -31,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             val movieDetailIntent = Intent(this@MainActivity, MovieDetail::class.java)
             movieDetailIntent.putExtra(MovieDetail.EXTRA_MOVIE, movies[position])
             startActivity(movieDetailIntent)
-        }
+        }*/
     }
 
     private fun prepare(){
