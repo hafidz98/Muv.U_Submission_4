@@ -10,7 +10,7 @@
         android:id="@+id/iv_movie_poster"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/movie_poster"
+        android:contentDescription="@string/item_poster"
         android:scaleType="centerCrop"
         android:src="@drawable/poster_a_star" />
 
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:text="@string/movie_tittle"
+            android:text="@string/item_tittle"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -37,7 +37,7 @@
             android:layout_height="match_parent"
             android:ellipsize="end"
             android:maxLines="3"
-            android:text="@string/movie_desc"
+            android:text="@string/item_syno"
             android:textSize="15sp" />
 
     </LinearLayout>

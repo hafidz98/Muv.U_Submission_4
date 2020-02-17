@@ -19,6 +19,7 @@ class CardViewAdapter(private val listDataItem: ArrayList<DataItem>) :
                     .load(dataItem.poster)
                     .into(iv_item_poster)
                 tv_item_tittle.text = dataItem.title
+                tv_item_desc.text = dataItem.desc
             }
 
         }

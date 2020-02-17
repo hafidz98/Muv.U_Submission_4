@@ -1,12 +1,16 @@
 <resources>
     <string name="app_name">Muv.U</string>
-    <string name="movie_poster">Movie Poster</string>
-    <string name="movie_tittle">Title</string>
-    <string name="movie_desc">Description</string>
+
+    <string name="item_poster">Poster</string>
+    <string name="item_tittle">Title</string>
+    <string name="item_syno">Synopsis</string>
+
     <string name="synopsis">Synopsis</string>
     <string name="dummy_txt">Test</string>
+
     <string name="main_tab_tittle_movies">Movies</string>
     <string name="main_tab_tittle_tvshows">Tv Shows</string>
+    <string name="favorite_button">Favorite Button</string>
 
     <array name="movie_poster">
         <item>@drawable/poster_a_star</item>
@@ -76,5 +80,6 @@
         <item>Earl Stone, a man in his eighties, is broke, alone, and facing foreclosure of his business when he is offered a job that simply requires him to drive. Easy enough, but, unbeknownst to Earl, he\'s just signed on as a drug courier for a Mexican cartel. He does so well that his cargo increases exponentially, and Earl hit the radar of hard-charging DEA agent Colin Bates.</item>
         <item>Investigative journalist Eddie Brock attempts a comeback following a scandal, but accidentally becomes the host of Venom, a violent, super powerful alien symbiote. Soon, he must rely on his newfound powers to protect the world from a shadowy organization looking for a symbiote of their own.</item>
     </string-array>
+
 
 </resources>

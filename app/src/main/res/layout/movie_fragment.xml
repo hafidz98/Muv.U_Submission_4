@@ -9,7 +9,6 @@
         android:id="@+id/movie_rv_fragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="@dimen/margin_medium"
         tools:listitem="@layout/item_row_rv" />
 
 </FrameLayout>

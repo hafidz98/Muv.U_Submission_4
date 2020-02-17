@@ -3,39 +3,97 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin_small"
+    android:layout_marginBottom="@dimen/margin_small"
     android:layout_marginStart="@dimen/margin_medium"
+    app:cardCornerRadius="6dp"
     android:layout_marginEnd="@dimen/margin_medium"
-    android:layout_marginBottom="@dimen/margin_medium">
+    app:cardElevation="4dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="180dp">
+
+        <TextView
+            android:id="@+id/tv_item_date"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:gravity="center_vertical"
+            android:padding="@dimen/margin_small"
+            android:text="@string/dummy_txt"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_item_score"
+            app:layout_constraintHorizontal_weight="7"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_poster"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_score"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_toStartOf="@id/btn_item_fav"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/dummy_txt"
+            android:textColor="#FFC200"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/btn_item_fav"
+            app:layout_constraintHorizontal_weight="3"
+            app:layout_constraintStart_toEndOf="@id/tv_item_date"
+            app:layout_constraintTop_toTopOf="@id/tv_item_date" />
+
+        <ImageButton
+            android:id="@+id/btn_item_fav"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:background="@color/colorPrimary"
+            android:contentDescription="@string/favorite_button"
+            android:src="@drawable/ic_fav_active"
+            android:text="@string/dummy_txt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toEndOf="@+id/tv_item_score"
+            app:layout_constraintTop_toTopOf="@+id/tv_item_score" />
+
+        <TextView
+            android:id="@+id/tv_item_desc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_small"
+            android:maxLines="3"
+            android:text="@string/item_syno"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_poster"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_tittle" />
 
         <ImageView
             android:id="@+id/iv_item_poster"
-            android:layout_width="150dp"
+            android:layout_width="125dp"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:background="?attr/colorPrimary"
-            android:contentDescription="@string/movie_poster"
+            android:contentDescription="@string/item_poster"
             android:scaleType="centerCrop"
             android:src="@mipmap/ic_launcher"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tv_item_tittle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_small"
-            android:layout_marginTop="@dimen/margin_small"
-            android:layout_marginEnd="@dimen/margin_small"
-            android:text="@string/movie_tittle"
-            android:textSize="20sp"
+            android:layout_margin="@dimen/margin_small"
+            android:text="@string/item_tittle"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/iv_item_poster"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/tv_item_date" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
