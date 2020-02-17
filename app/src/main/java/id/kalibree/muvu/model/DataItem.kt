@@ -1,10 +1,10 @@
-package id.kalibree.muvu
+package id.kalibree.muvu.model
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-data class Movie(
+data class DataItem(
     var poster: Int,
     var title: String?,
     var desc: String?

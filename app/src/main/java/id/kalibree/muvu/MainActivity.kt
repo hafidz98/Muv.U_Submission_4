@@ -4,15 +4,15 @@ import android.content.res.TypedArray
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import id.kalibree.muvu.adapter.TabLayoutAdapter
+import id.kalibree.muvu.model.DataItem
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var adapter: MovieAdapter
     private lateinit var movieTitle: Array<String>
     private lateinit var movieDesc: Array<String>
     private lateinit var moviePoster: TypedArray
-    private var movies = arrayListOf<Movie>()
+    private var movies = arrayListOf<DataItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,10 +48,10 @@ class MainActivity : AppCompatActivity() {
         movieDesc = resources.getStringArray(R.array.movie_desc)
         moviePoster = resources.obtainTypedArray(R.array.movie_poster)
     }
-
+/*
     private fun addItem(){
         for (positon in movieTitle.indices){
-            val movie = Movie(
+            val movie = DataItem(
                 moviePoster.getResourceId(positon, -1),
                 movieTitle[positon],
                 movieDesc[positon]
@@ -60,4 +60,6 @@ class MainActivity : AppCompatActivity() {
         }
         adapter.movies = movies
     }
+
+ */
 }
