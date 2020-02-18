@@ -5,11 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".ui.tvshows.TvShowsFragment">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/dummy_txt" />
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/tvshows_rv_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_row_rv" />
 </FrameLayout>

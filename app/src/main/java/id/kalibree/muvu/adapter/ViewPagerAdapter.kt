@@ -1,6 +1,7 @@
 package id.kalibree.muvu.adapter
 
 import android.content.Context
+import androidx.annotation.StringRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
@@ -8,9 +9,10 @@ import id.kalibree.muvu.R
 import id.kalibree.muvu.ui.movie.MovieFragment
 import id.kalibree.muvu.ui.tvshows.TvShowsFragment
 
-class TabLayoutAdapter(private val mContext: Context, fragmentManager: FragmentManager) :
+class ViewPagerAdapter(private val mContext: Context, fragmentManager: FragmentManager) :
     FragmentPagerAdapter(fragmentManager, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
+    @StringRes
     private val TAB_LAYOUT_TITLES = intArrayOf(
         R.string.main_tab_tittle_movies,
         R.string.main_tab_tittle_tvshows

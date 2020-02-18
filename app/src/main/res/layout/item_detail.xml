@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_margin="15dp"
     android:orientation="vertical"
-    tools:context=".MovieDetail">
+    tools:context=".ui.detail.ItemDetail">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,15 +13,15 @@
         android:layout_marginBottom="10dp">
 
         <ImageView
-            android:id="@+id/iv_movie_poster_detail"
+            android:id="@+id/iv_poster_detail"
             android:layout_width="170dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:contentDescription="@string/item_poster"
             android:scaleType="centerCrop"
-            android:src="@drawable/poster_a_star" />
+            android:src="@mipmap/ic_launcher" />
 
         <TextView
-            android:id="@+id/tv_movie_tittle_detail"
+            android:id="@+id/tv_tittle_detail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
@@ -41,7 +41,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/tv_movie_desc_detail"
+        android:id="@+id/tv_desc_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/item_syno"

@@ -12,7 +12,7 @@ import id.kalibree.muvu.model.DataItem
 import kotlinx.android.synthetic.main.movie_fragment.*
 
 class MovieFragment : Fragment() {
-    private val listDataItem = ArrayList<DataItem>()
+    private val listMovies = ArrayList<DataItem>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,8 +24,7 @@ class MovieFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        movie_rv_fragment.setHasFixedSize(true)
-        listDataItem.addAll(getListMovies())
+        listMovies.addAll(getListMovies())
         displayRecyclerCardView()
     }
 
@@ -49,7 +48,7 @@ class MovieFragment : Fragment() {
 
     private fun displayRecyclerCardView() {
         movie_rv_fragment.layoutManager = LinearLayoutManager(activity)
-        movie_rv_fragment.adapter = CardViewAdapter(listDataItem)
+        movie_rv_fragment.adapter = CardViewAdapter(listMovies)
+        movie_rv_fragment.setHasFixedSize(true)
     }
-
 }
