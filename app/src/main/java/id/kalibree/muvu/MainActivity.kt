@@ -1,6 +1,10 @@
 package id.kalibree.muvu
 
+import android.content.Intent
 import android.os.Bundle
+import android.provider.Settings
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import id.kalibree.muvu.adapter.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -16,22 +20,18 @@ class MainActivity : AppCompatActivity() {
         main_tab_layout.setupWithViewPager(main_view_pager)
 
         supportActionBar?.elevation = 0F
-
-        //val listView: ListView = findViewById(R.id.lv_movie)
-        /*
-        val listView: ListView = lv_movie
-        adapter = MovieAdapter(this)
-        listView.adapter = adapter
-
-        prepare()
-        addItem()
-
-        listView.onItemClickListener = AdapterView.OnItemClickListener{_, _, position, _ ->
-            val movieDetailIntent = Intent(this@MainActivity, MovieDetail::class.java)
-            movieDetailIntent.putExtra(MovieDetail.EXTRA_MOVIE, movies[position])
-            startActivity(movieDetailIntent)
-        }*/
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.menu_change_language) {
+            val langIntent = Intent(Settings.ACTION_LOCALE_SETTINGS)
+            startActivity(langIntent)
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
