@@ -3,9 +3,11 @@ package id.kalibree.muvu.ui.detail
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import id.kalibree.muvu.R
 import id.kalibree.muvu.model.DataItem
+import kotlinx.android.synthetic.main.item_detail.*
 
 class ItemDetail : AppCompatActivity() {
 
@@ -29,6 +31,10 @@ class ItemDetail : AppCompatActivity() {
 
         supportActionBar?.title = "Detail"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        btn_item_favorite.setOnClickListener {
+            Toast.makeText(this, "Favorited", Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

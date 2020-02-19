@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Muv.U</string>
+    <string name="favorite_button" translatable="false">Tombol Favorit</string>
+    <string name="dumm_score">8.9</string>
+    <string name="dummy_date">01/01/2020</string>
+    <string name="dummy_txt">Tes</string>
+    <string name="item_poster" translatable="false">Poster</string>
+    <string name="item_syno" translatable="false">Sinopsis</string>
+    <string name="item_tittle" translatable="false">Judul</string>
+    <string name="main_tab_tittle_movies" translatable="false">Film</string>
+    <string name="main_tab_tittle_tvshows" translatable="false">Acara Tv</string>
+</resources>
