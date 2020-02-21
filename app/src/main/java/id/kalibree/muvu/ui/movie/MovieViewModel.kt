@@ -66,7 +66,7 @@ class MovieViewModel : ViewModel() {
                     404 -> "$statusCode : Not Found"
                     else -> "$statusCode : ${error.message}"
                 }
-                Log.d("Error getMovies() :", errorMessage)
+                Log.d("Error getMovies() ", errorMessage)
                 errorStatus = errorMessage
             }
         })
