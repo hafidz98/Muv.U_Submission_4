@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".ui.detail.ItemDetail">
+    tools:context=".ui.detail.ItemDetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_tittle_detail"
+                    android:id="@+id/tv_title_detail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_medium"
@@ -46,12 +46,12 @@
                     android:text="@string/item_tittle"
                     android:textSize="20sp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/tv_item_score"
+                    app:layout_constraintEnd_toStartOf="@+id/tv_score_detail"
                     app:layout_constraintStart_toEndOf="@+id/iv_poster_detail"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
+                    app:layout_constraintTop_toBottomOf="@+id/tv_date_detail" />
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/tv_date_detail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/margin_medium"
@@ -61,7 +61,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/tv_item_score"
+                    android:id="@+id/tv_score_detail"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:background="@color/colorPrimary"

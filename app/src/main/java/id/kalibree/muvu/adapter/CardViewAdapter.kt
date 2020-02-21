@@ -10,28 +10,39 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import id.kalibree.muvu.R
 import id.kalibree.muvu.model.DataItem
-import id.kalibree.muvu.ui.detail.ItemDetail
+import id.kalibree.muvu.ui.detail.ItemDetailActivity
 import kotlinx.android.synthetic.main.item_row_rv.view.*
 
-class CardViewAdapter(private val listDataItem: ArrayList<DataItem>) :
+class CardViewAdapter :
     RecyclerView.Adapter<CardViewAdapter.CardViewViewHolder>() {
+
+    private val mData = ArrayList<DataItem>()
+
+    fun setData(items: ArrayList<DataItem>) {
+        mData.clear()
+        mData.addAll(items)
+        notifyDataSetChanged()
+    }
 
     inner class CardViewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(dataItem: DataItem) {
             with(itemView) {
+                val imgSize = "w185"
+                val imgUrl = "https://image.tmdb.org/t/p/"
+
                 Glide.with(context)
-                    .load(dataItem.poster)
+                    .load(imgUrl + imgSize + dataItem.poster)
                     .into(iv_item_poster)
 
                 tv_item_tittle.text = dataItem.title
                 tv_item_desc.text = dataItem.desc
-                tv_item_date.text = resources.getString(R.string.dummy_date)
-                tv_item_score.text = resources.getString(R.string.dumm_score)
+                tv_item_date.text = dataItem.release_date
+                tv_score_detail.text = dataItem.score.toString()
 
                 setOnClickListener {
                     showToast(dataItem.title, context)
-                    val intentDetail = Intent(context, ItemDetail::class.java)
-                    intentDetail.putExtra(ItemDetail.EXTRA_DATA, dataItem)
+                    val intentDetail = Intent(context, ItemDetailActivity::class.java)
+                    intentDetail.putExtra(ItemDetailActivity.EXTRA_DATA, dataItem)
                     context.startActivity(intentDetail)
                 }
 
@@ -49,11 +60,11 @@ class CardViewAdapter(private val listDataItem: ArrayList<DataItem>) :
     }
 
     override fun getItemCount(): Int {
-        return listDataItem.size
+        return mData.size
     }
 
     override fun onBindViewHolder(holder: CardViewViewHolder, position: Int) {
-        holder.bind(listDataItem[position])
+        holder.bind(mData[position])
     }
 
     override fun getItemId(position: Int): Long {

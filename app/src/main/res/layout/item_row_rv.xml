@@ -19,23 +19,23 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginStart="@dimen/margin_small"
-            android:padding="@dimen/margin_small"
             android:gravity="center_vertical"
-            android:text="@string/dummy_txt"
+            android:padding="@dimen/margin_small"
+            android:text="@string/dummy_date"
             android:textSize="14sp"
-            app:layout_constraintEnd_toStartOf="@+id/tv_item_score"
+            app:layout_constraintEnd_toStartOf="@+id/tv_score_detail"
             app:layout_constraintHorizontal_weight="7"
             app:layout_constraintStart_toEndOf="@+id/iv_item_poster"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_item_score"
+            android:id="@+id/tv_score_detail"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_toStartOf="@id/btn_item_fav"
             android:background="@color/colorPrimary"
             android:gravity="center"
-            android:text="@string/dummy_txt"
+            android:text="@string/dumm_score"
             android:textColor="#FFC200"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -55,8 +55,8 @@
             android:text="@string/dummy_txt"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_weight="2"
-            app:layout_constraintStart_toEndOf="@+id/tv_item_score"
-            app:layout_constraintTop_toTopOf="@+id/tv_item_score" />
+            app:layout_constraintStart_toEndOf="@+id/tv_score_detail"
+            app:layout_constraintTop_toTopOf="@+id/tv_score_detail" />
 
         <TextView
             android:id="@+id/tv_item_desc"

@@ -5,7 +5,10 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class DataItem(
-    var poster: Int,
-    var title: String?,
-    var desc: String?
+    var id: Int = 0,
+    var poster: String? = null,
+    var title: String? = null,
+    var desc: String? = null,
+    var release_date: String? = null,
+    var score: Double = 0.0
 ) : Parcelable

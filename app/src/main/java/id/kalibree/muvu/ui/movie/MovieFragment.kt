@@ -5,14 +5,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.kalibree.muvu.R
 import id.kalibree.muvu.adapter.CardViewAdapter
-import id.kalibree.muvu.model.DataItem
 import kotlinx.android.synthetic.main.movie_fragment.*
 
 class MovieFragment : Fragment() {
-    private val listMovies = ArrayList<DataItem>()
+    private lateinit var cardViewAdapter: CardViewAdapter
+    private lateinit var movieViewModel: MovieViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,31 +26,31 @@ class MovieFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        listMovies.addAll(getListMovies())
-        displayRecyclerCardView()
+        cardViewAdapter = CardViewAdapter()
+        cardViewAdapter.notifyDataSetChanged()
+
+        movie_rv_fragment.layoutManager = LinearLayoutManager(this.context)
+        movie_rv_fragment.adapter = cardViewAdapter
+
+        movieViewModel = ViewModelProvider(
+            this,
+            ViewModelProvider.NewInstanceFactory()
+        ).get(MovieViewModel::class.java)
+
+        showLoading(true)
+        movieViewModel.getMovies().observe(this.viewLifecycleOwner, Observer {
+            if (it != null) {
+                cardViewAdapter.setData(it)
+                showLoading(false)
+            }
+        })
     }
 
-    private fun getListMovies(): ArrayList<DataItem> {
-        val movieTitle = resources.getStringArray(R.array.movie_tittle)
-        val moviePoster = resources.obtainTypedArray(R.array.movie_poster)
-        val movieDesc = resources.getStringArray(R.array.movie_desc)
-
-        val listMovies = ArrayList<DataItem>()
-        for (position in movieTitle.indices) {
-            val movies = DataItem(
-                moviePoster.getResourceId(position, -1),
-                movieTitle[position],
-                movieDesc[position]
-            )
-            listMovies.add(movies)
+    private fun showLoading(state: Boolean) {
+        if (state) {
+            movie_progress_bar.visibility = View.VISIBLE
+        } else {
+            movie_progress_bar.visibility = View.GONE
         }
-        moviePoster.recycle()
-        return listMovies
-    }
-
-    private fun displayRecyclerCardView() {
-        movie_rv_fragment.layoutManager = LinearLayoutManager(activity)
-        movie_rv_fragment.adapter = CardViewAdapter(listMovies)
-        movie_rv_fragment.setHasFixedSize(true)
     }
 }
